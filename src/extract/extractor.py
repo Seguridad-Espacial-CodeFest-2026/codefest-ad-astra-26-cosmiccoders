@@ -165,10 +165,10 @@ def main():
     prueba = input("¿Procesar solo 3 archivos de prueba? (s/n): ").strip().lower()
     if prueba == "s":
         archivos_prueba = []
-    for path in archivos:
-        if path.suffix.lower() in formatos_soportados:
-            archivos_prueba.append(path)
-    archivos = archivos_prueba[:3]
+        for path in archivos:
+            if path.suffix.lower() in formatos_soportados:
+                archivos_prueba.append(path)
+        archivos = archivos_prueba[:3]
     procesados = 0
     vacios = 0
     errores = 0

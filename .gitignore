@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Entorno virtual
+.venv/
+venv/
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+
+# Corpus original
+data/raw/
+
+# Datos intermedios pesados
+data/processed/
+data/embeddings/
+data/indexes/
+
+# Embeddings temporales
+*.npy
+*.npz
+
+# Secrets
+.env

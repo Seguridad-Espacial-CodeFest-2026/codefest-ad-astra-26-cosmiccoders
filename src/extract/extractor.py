@@ -24,15 +24,13 @@ def limpiar_texto(text):
     text = text.replace("\x00", "")
     text = text.replace("\r\n", "\n")
     text = text.replace("\r", "\n")
-    paragraphs = []
-    for paragraph in text.split("\n\n"):
-        paragraph = " ".join(
-            paragraph.split()
-        )
-        if paragraph:
-            paragraphs.append(paragraph)
-    return "\n\n".join(paragraphs)
-#Este limpia el texto que se extrajo eliminando caracteres extraños y espacios innecesarios. Unifica saltos de línea y conserva la separación entre párrafos.
+    lineas = []
+    for linea in text.split("\n"):
+        linea = " ".join(linea.split())
+        lineas.append(linea)
+    return "\n".join(lineas)
+#se limpia cada línea eliminando espacios innecesarios. se conservan los saltos de línea para mantener mejor la estructura original.
+
 
 #Extraer el PDF
 def extraer_pdf(path):
@@ -185,7 +183,7 @@ def main():
                         if not documento["texto"].strip():
                             vacios += 1
                             print( f"[vacio] {path.relative_to(CORPUS_PATH)}")
-                            guardar_documento(documento)
+                        guardar_documento(documento)
                         procesados += 1
                         print(f"[procesado] {path.relative_to(CORPUS_PATH)}")
                 except Exception as error:
